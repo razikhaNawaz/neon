@@ -20,11 +20,11 @@ const Hero = () => {
             </h1>
           </div>
           <div className="flexColStart hero-des">
-            <span>
+            <span className="secondaryText">
               Get clear ideas of what raw materials to be used to build your
               home.
             </span>
-            <span>
+            <span className="secondaryText">
               Delivering the highest quality in Home construction service
             </span>
           </div>
