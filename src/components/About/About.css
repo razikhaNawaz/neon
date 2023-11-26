@@ -7,3 +7,13 @@
   .v-right {
     gap: 0.5rem;
   }
+  @media (max-width: 1024px) {
+    .v-container{
+        flex-direction: column;
+    }
+}
+@media (max-width: 768px) {
+  .primaryText{
+      font-size: .8rem;
+  }
+}

@@ -1,0 +1,28 @@
+[
+    {
+      "name": "prettydeepdive",
+      "price": "47,043",
+      "detail": "Responsive web application made using HTML, CSS, Javascript, React js, Next js, mongodb.",
+      "image": "./d1.png"
+    },
+    {
+      "name": "eCommerceProject",
+      "price": "66,353",
+      "detail": "Simple React app to buy sell products where you can store your all cart related data to firebase",
+      "image": "./d2.png"
+    },
+    {
+      "name": "ExpenseTracker",
+      "price": "35,853",
+      "detail": "A feature rich React app that help users to keep the track of their expenses.",
+      "image": "./d3.png"
+    },
+    {
+      "name": "Mailboxclient",
+      "price": "47,043",
+      "detail": "A simple React app that is able to send and receive mails without using any mail API.",
+      "image": "./d4.png"
+    }
+    
+  ]
+  
