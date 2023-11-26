@@ -8,7 +8,7 @@ import { HiChatBubbleBottomCenter } from "react-icons/hi2";
 const Contactus = () => {
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
-  const [video, setVideo] = useState("");
+  
   const [email, setEmail] = useState("");
   const [data, setData] = useState([]);
 
@@ -18,44 +18,28 @@ const Contactus = () => {
   const mesHandler = (e) => {
     setMessage(e.target.value);
   };
-  const vidHandler = (e) => {
-    setVideo(e.target.value);
-  };
+  
   const emailHandler = (e) => {
     setEmail(e.target.value);
   };
 
-  let url = "https://mailbox-f7b85-default-rtdb.firebaseio.com";
-  const sender = localStorage.getItem("email").replace(/['@','.']/g, "");
-
-  const postDatatoSentBox = async () => {
-    try {
-      const response = await fetch(`${url}/sentBox/${sender}.json`, {
-        method: "POST",
-        body: JSON.stringify({
-          number: number,
-          message: message,
-          video: video,
-          email: email,
-          returnSecureToken: true,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-    } catch (error) {
-      alert(error);
-    }
-  };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem('email',email)
-    postDatatoSentBox();
-    // Clear the form after successful submission
+   
+    const obj={
+      number: number,
+      message: message,
+      email: email,
+    }
+    setData([...data, obj])
+    console.log(obj)
+    localStorage.setItem('email',email)
+    localStorage.setItem('number',number)
+    localStorage.setItem('message',message)
     setNumber("");
     setMessage("");
-    setVideo("");
     setEmail("");
   };
   return (
@@ -99,17 +83,7 @@ const Contactus = () => {
 
             {/* second row */}
             <div className="flexStart row">
-              <div className="flexColCenter mode">
-                <div className="flexStart">
-                  <div className="flexCenter icon">
-                    <BsFillChatDotsFill size={25} />
-                  </div>
-                  <div className="flexColStart detail">
-                    <span className="primaryText">Video Call</span>
-                    <input type="number" value={video} onChange={vidHandler} />
-                  </div>
-                </div>
-              </div>
+             
 
               <div className="flexColCenter mode">
                 <div className="flexStart">
@@ -123,7 +97,7 @@ const Contactus = () => {
                 </div>
               </div>
             </div>
-            <button className="flexCenter button">Message now</button>
+            <button className="flexCenter button">Submit</button>
           </form>
         </div>
 
